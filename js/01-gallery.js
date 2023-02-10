@@ -1,5 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
+const galleryContainer = document.querySelector('.gallery');
+
 const makeGaleryCard = ({ preview, original, description }) => {
   const gallerylinkEl = document.createElement('a');
   gallerylinkEl.classList.add('gallery__link');
@@ -14,10 +16,9 @@ const makeGaleryCard = ({ preview, original, description }) => {
   gallerylinkEl.appendChild(imageEl);
   return gallerylinkEl;
 };
-const imageGalery = galleryItems.map(makeGaleryCard);
+const imagesGalery = galleryItems.map(makeGaleryCard);
 
-const galleryContainer = document.querySelector('.gallery');
-galleryContainer.append(...imageGalery);
+galleryContainer.append(...imagesGalery);
 
 const onImageClick = event => (
   event.preventDefault(), event.target.nodeName === 'IMG' ? onOpenModalWindow(event) : false
