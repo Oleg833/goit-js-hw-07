@@ -34,10 +34,10 @@ function onOpenModalWindow(event) {
     width="1280" height="1024">`,
     {
       onShow: instance => {
-        galleryContainer.addEventListener('keydown', pressEsc);
+        document.addEventListener('keydown', pressEsc);
       },
       onClose: instance => {
-        galleryContainer.removeEventListener('keydown', pressEsc);
+        document.removeEventListener('keydown', pressEsc);
       },
     }
   );
